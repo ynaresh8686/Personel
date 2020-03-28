@@ -1,0 +1,48 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xsi:schemaLocation="
+      http://www.springframework.org/schema/beans 
+      http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+      http://www.springframework.org/schema/context 
+      http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+      
+      <context:annotation-config/>
+      <context:component-scan base-package="com.naresh"/>
+                
+   <bean id="helloworld" class="com.naresh.model.Helloworld">
+   
+   <constructor-arg value="SPRING_CORE"></constructor-arg>
+   </bean>              
+   <!-- <bean id="exam" class="com.naresh.model.Exam">
+   <constructor-arg value="1001"></constructor-arg>
+   <constructor-arg value="wht is Telugu states?"></constructor-arg>
+   <constructor-arg>
+   <list>
+   <value>A.P</value>
+   <value>Telangana</value>
+   </list>
+   </constructor-arg>
+   </bean> -->
+   
+<!--    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>classpath:constants.properties</value>
+        </property>
+    </bean> -->
+   
+   <context:property-placeholder location="classpath:constants.properties" />
+   <bean id="exam" class="com.naresh.model.Exam">
+   <property name="id" value="1001"></property>
+   
+   </bean>
+   
+    <bean id="insurence" class="com.naresh.model.Insurence" />
+    <bean id="innova" class="com.naresh.model.Innova" />
+   
+    <bean id="ans" class="com.naresh.model.Answer" >
+    <property name="id" value="0"></property>
+    <property name="ans" value="itt"></property>
+    </bean>            
+                
+ </beans>
